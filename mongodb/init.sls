@@ -5,8 +5,9 @@ mongodb:
     - template: jinja
     - user: root
     - group: root
-    - mode: 440
+    - mode: 744
     - source: salt://mongodb/files/mongodb.conf
+
   service:
     - running
     - enable: True
