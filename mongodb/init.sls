@@ -89,7 +89,7 @@ mongo_conf:
     - user: root
     - group: root
     - mode: 444
-    - source: salt://files/mongodb/etc/mongod.conf
+    - source: salt://mongodb/files/mongodb/etc/mongod.conf
 
 mongod:
   cmd.wait:
@@ -109,7 +109,7 @@ mongod:
     - user: root
     - group: root
     - mode: 440
-    - source: salt://files/mongodb/etc/init/mongod.conf
+    - source: salt://mongodb/files/mongodb/etc/init/mongod.conf
     - require:
       - cmd: mongod
   service.running:
@@ -128,4 +128,4 @@ mongod:
     - user: root
     - group: root
     - mode: 440
-    - source: salt://files/mongodb/etc/logrotate.d/mongodb
+    - source: salt://mongodb/files/mongodb/etc/logrotate.d/mongodb
