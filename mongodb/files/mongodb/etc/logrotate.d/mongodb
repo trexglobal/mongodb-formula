@@ -1,0 +1,15 @@
+# Put this in /etc/logrotate.d/mongodb
+# http://stackoverflow.com/questions/5004626/mongodb-log-file-growth
+ 
+/data/mongo/log/*.log {
+    daily
+    rotate 30
+    compress
+    dateext
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        /bin/kill -SIGUSR1 `cat /data/mongo/db/mongod.lock 2> /dev/null` 2> /dev/null || true
+    endscript
+}
