@@ -27,6 +27,7 @@ mongo_user:
   user.present:
     - name: mongodb
     - home: {{ home }}
+    - createhome: false
     - groups:
       - mongodb
     - require:
