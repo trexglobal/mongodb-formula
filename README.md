@@ -3,6 +3,8 @@ mongodb-formula
 
 Installing our own MongoDB version
 
+## Requirements:
+100 GB disk space is recommended available size to spool up mongodb database with data. Please ensure server is setup correctly and have sufficient disk-space available. 
 
 ## Install
 
