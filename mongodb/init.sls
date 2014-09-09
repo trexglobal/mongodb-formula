@@ -58,6 +58,7 @@ mongo_etc:
     - user: mongodb
     - group: mongodb
     - mode: 0755
+    - makedirs: True
     - require:
       - user: mongo_user
       - group: mongo_group
@@ -68,6 +69,7 @@ mongo_data:
     - user: mongodb
     - group: mongodb
     - mode: 0755
+    - makedirs: True
     - require:
       - user: mongo_user
       - group: mongo_group
@@ -99,6 +101,7 @@ mongo_conf:
     - user: root
     - group: root
     - mode: 444
+    - makedirs: True
     - source: salt://mongodb/files/mongodb/etc/mongod.conf
 
 mongod:
