@@ -46,6 +46,7 @@ mongo_log:
     - user: mongodb
     - group: mongodb
     - mode: 0755
+    - makedirs: True
     - require:
       - user: mongo_user
       - group: mongo_group
