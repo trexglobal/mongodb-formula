@@ -1,4 +1,5 @@
 {% set source = '/usr/local/src' -%}
+{% set base = '/data' -%}
 {% set home = '/data/mongodb-home' -%}
 {% set install_dir = '/data/mongo' -%}
 {% set version = 'mongo-2.6.0-trex-patched' -%}
@@ -17,7 +18,7 @@ mongo_group:
 
 mongo_user:
   file.directory:
-    - name: {{ home }}
+    - name: {{ base }}
     - user: mongodb
     - group: mongodb
     - mode: 0755
@@ -27,7 +28,6 @@ mongo_user:
   user.present:
     - name: mongodb
     - home: {{ home }}
-    - createhome: false
     - groups:
       - mongodb
     - require:
