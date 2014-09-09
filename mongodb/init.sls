@@ -19,6 +19,8 @@ mongo_group:
 mongo_user:
   file.directory:
     - name: {{ base }}
+  file.directory:
+    - name: {{ home }}
     - user: mongodb
     - group: mongodb
     - mode: 0755
