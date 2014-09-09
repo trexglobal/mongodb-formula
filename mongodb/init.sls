@@ -39,7 +39,6 @@ mongo_user:
       - mongodb
     - require:
       - group: mongo_group
-      - directory: data
 
 mongo_log:
   file.directory:
