@@ -16,9 +16,19 @@ mongo_group:
   group.present:
     - name: mongodb
 
-mongo_user:
+/data:
   file.directory:
     - name: {{ base }}
+    - user: mongodb
+    - group: mongodb
+    - mode: 0755
+    - makedirs: True
+    - recurse:
+      - user
+      - group
+      - mode
+
+mongo_user:
   file.directory:
     - name: {{ home }}
     - user: mongodb
