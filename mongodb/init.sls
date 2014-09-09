@@ -16,7 +16,7 @@ mongo_group:
   group.present:
     - name: mongodb
 
-/data:
+data:
   file.directory:
     - name: {{ base }}
     - group: mongodb
@@ -39,6 +39,7 @@ mongo_user:
       - mongodb
     - require:
       - group: mongo_group
+      - directory: data
 
 mongo_log:
   file.directory:
